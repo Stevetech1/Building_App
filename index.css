@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
+/* root color */
+:root {
+    --bg-light: rgb(238, 238, 238);
+    --bg-white: #fff;
+    --primary-color: rgb(96, 69, 252);
+    --primary-blue: rgb(57, 170, 252);
+    --grey-text: rgba(73, 71, 71, 0.981);
+    --box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    --card-border-radius: 0.7rem;
+}
+
+/* css reset */
+*, 
+::before, 
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+}
+/* setting font using variable with this we can continue using rem insteady of px % */
+html {
+    font-size: 14px;
+}
+/* google font family */
+body {
+    font-family: 'Poppins', sans-serif;
+    user-select: none;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg-light);
+    color: var(--grey-text);
+}
+.container{
+    width: 100%;
+    max-width: 2000px;
+    margin: 0 auto;
+    background-color: white;
+}
+nav{
+    background-color: var(--bg-white);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 3rem;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+nav .logo img{
+    width: 4rem;
+}
+nav .logo, nav .nav-icons{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+nav .logo h3{
+    color: var(--primary-blue);
+}
+nav .logo h3 span{
+    color: var(--primary-color);
+}
+.nav-icons i{
+    background-color: var(--bg-light);
+    padding: 1rem;
+    border-radius: 50%;
+}
+.profile-photo{
+    background-color: var(--primary-color);
+    padding: 0.5rem;
+    border-radius: 100%;
+    color: var(--bg-white);
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+/* styling main componet */
+main{
+    display: grid;
+    grid-template-columns: 6rem auto;
+    width: 100%;
+    height: 80vh;
+    gap: 5rem;
+}
+main aside{
+    background-color: var(--bg-white);
+}
+aside .side-bar-icons{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0.8rem; 
+    gap: 1rem;
+}
+aside .side-bar-icons a{
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.3rem;
+    color: var(--grey-text);
+    transition: all 400ms ease-in-out;
+}
+aside .side-bar-icons .active{
+    background-color: var(--primary-color);
+    color: var(--bg-white);
+}
+aside .side-bar-icons a:hover{
+    background-color: var(--primary-color);
+    color: var(--bg-white);
+}
+.products{
+    margin: 2rem;
+    margin-left: 0;
+}
+.products h3{
+    font-size: 1.5rem;
+}
+.table{
+    background-color: var(--bg-white);
+    border-radius: var(--card-border-radius);
+    padding: 3rem;
+}
+table{
+    text-align: center;
+}
+table tr td{
+    margin: 2.5rem;
+    border-bottom: 2px solid var(--grey-text);
+}
+/* Style for the products section */
+.products {
+    padding: 20px;
+}
+
+/* Style for the products section title */
+.products h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+/* Style for the table */
+.table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Style for table headers */
+.table th td{
+    background-color: var(--bg-white);
+    color: var(--primary-color);
+    font-weight: bold;
+    text-align: left;
+    padding: 1rem;
+    border-bottom: 2px solid var(--bg-light);
+}
+
+/* Style for table cells */
+.table td {
+    padding: 10px;
+    border-bottom: 1px solid var(--bg-light);
+}
+
+/* Style for table rows with the "Available" class */
+.table .Available {
+    color: green;
+    font-weight: bold;
+}
+
+/* Style for table rows with the "finished" class */
+.table .finished {
+    color: red;
+    font-weight: bold;
+}
+
+/* Style for the "Add New Product" button */
+.btn {
+    background-color: var(--primary-color);
+    color: var(--bg-white);
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+
+/* Hover effect for the button */
+.btn:hover {
+    background-color: var(--primary-blue);
+}
+.popup{
+    position: absolute;
+    top: 0;
+    z-index: 1000;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.088);
+    animation: zoom 300ms ease;
+    visibility: hidden;
+}
+.form-heading{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+.form{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--bg-white);
+    width: 50%;
+    padding: 2rem;
+    border-radius: 0.7rem;
+}
+.form-element{
+    margin: 2rem 0;
+}
+form input{
+    margin: 0.5rem 0;
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    background-color: var(--bg-light);
+    border-radius: 0.4rem;
+}
+.radio div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.radio input{
+    width: 1rem;
+    margin-right: 1rem;
+}
+.form-element .btn{
+    width: 100%;
+    margin-top: 3rem;
+}
+.submit-btn{
+    width: 10rem;
+    margin: 0 auto;
+}
+#close{
+    cursor: pointer;
+}
+@keyframes zoom {
+    0%{
+        transform: scale(0);
+    }
+    50%{
+        transform: scale(2);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
